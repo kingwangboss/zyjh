@@ -88,8 +88,8 @@
 
         <div class="bottom-btnView1">
             
-            <button class="bottom-btn1" style="background-color: rgb(229, 87, 77);border-color:rgba(0,0,0,0);color:#fff;" @click="ok">确定</button>
-            <button class="bottom-btn1" style="background-color: rgb(232, 159, 109);border-color:rgba(0,0,0,0);color:#fff;" @click="cancel">取消</button>
+            <button class="bottom-btn1" style="background-color: #dc3931;border-color:rgba(0,0,0,0);color:#fff;" @click="ok">确定</button>
+            <button class="bottom-btn1" style="background-color: #f77329;border-color:rgba(0,0,0,0);color:#fff;" @click="cancel">取消</button>
 
         </div>
     </div>

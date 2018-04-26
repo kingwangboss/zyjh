@@ -39,5 +39,11 @@ export default new Router({
       name: 'PlanDetail',
       component: resolve => require(['@/pages/planDetail'], resolve)
     },
+    {
+      path: '/planVC/planDetail/setParameter',
+      name: 'setParameter',
+      // component: setParameter
+      component: resolve => require(['@/pages/setParameter'], resolve),
+    },
   ]
 })

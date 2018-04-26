@@ -12,14 +12,14 @@
                 <span v-if="title.suoshuiQH" class="back" @click="suoshuiQH">
                     <img src="../../assets/left-qh.png" alt="" />
                 </span>
-                <!-- <span class="title">{{title.text}}</span> -->
+                
                 <span class="title">{{title.text}}</span>
 
-                <!-- <span v-if="title.right" class="right" @click="right">
+                <span v-if="title.right" class="right" @click="right">
                     <img src="../../assets/sousuobtn.png" alt="搜索" />
                 </span>
 
-                <span v-if="title.setting" class="right" @click="setting">
+                <!-- <span v-if="title.setting" class="right" @click="setting">
                     <img src="../../assets/settings.png" alt="设置" />
                 </span> -->
 
@@ -103,6 +103,9 @@ export default {
     return {};
   },
   methods: {
+    right() {
+      this.$router.push("/planVC/planDetail/setParameter");
+    },
     qhCaizhong() {
       this.$router.push("/XZcaizhong");
     },

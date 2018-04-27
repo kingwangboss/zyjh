@@ -64,7 +64,7 @@ function listenHuadong(self) {
                     // alert("向左！");
                     console.log(that.maxactiveName);
                     console.log(that.activeName);
-                    if (parseInt(that.activeName) + 1 < that.maxactiveName) {
+                    if (parseInt(that.activeName) + 1 < that.maxactiveName) {             
                         that.activeName = (parseInt(that.activeName) + 1).toString();
                         localStorage.detailID = that.activeName
                     } else {

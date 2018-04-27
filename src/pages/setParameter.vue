@@ -126,7 +126,7 @@
   line-height: 18px;
   font-size: 12px;
   align-content: left;
-  width: 18%;
+  width: 16%;
 }
 
 .btn {
@@ -164,7 +164,7 @@
 .input {
   margin: 17px 8px;
   background: #f4f4f4;
-  width: 14%; // height: 25px;
+  width: 17%; // height: 25px;
   font-size: 10px;
   outline: none;
 }
@@ -194,7 +194,7 @@
   display: flex;
   flex-direction: row; // margin-left: 10px;
   flex-wrap: wrap;
-  margin-bottom: 1000px;
+  margin-bottom: 60vw;
   // margin-top: 1px;
   border-bottom: 1px solid rgb(235, 235, 235);
   background: #fff;

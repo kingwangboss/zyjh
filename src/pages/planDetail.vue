@@ -2,7 +2,7 @@
     <div>
 
         <m-header :title="title"></m-header>
-        <kjview :kjdata="kjData" :Time="nextTime" v-if="flag"></kjview>
+        <kjview id="kjview" :kjdata="kjData" :Time="nextTime" v-if="flag"></kjview>
         <!-- <kjview></kjview> -->
         <el-tabs id="content" v-model="activeName" @tab-click="handleClick" style="color:black;">
             <el-tab-pane :label="item.PlanName" :name="index.toString()" :index="index.toString()" v-for="(item,index) in listData" :key="index.toString()">

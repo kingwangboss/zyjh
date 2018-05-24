@@ -6,6 +6,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'isNeedLogin',
+      // component: isNeedLogin
+      component: resolve => require(['@/pages/isNeedLogin'], resolve)
+    },
+    {
       path: '/login',
       name: 'loginVC',
       // component: loginVC
@@ -44,6 +50,24 @@ export default new Router({
       name: 'setParameter',
       // component: setParameter
       component: resolve => require(['@/pages/setParameter'], resolve),
+    },
+    {
+      path: '/regist',
+      name: 'registVC',
+      // component: registVC
+      component: resolve => require(['@/pages/regist'], resolve)
+    },
+    {
+      path: '/lossPwd1',
+      name: 'lossPwdVC1',
+      // component: lossPwdVC
+      component: resolve => require(['@/pages/lossPwd1'], resolve)
+    },
+    {
+      path: '/lossPwd2',
+      name: 'lossPwdVC2',
+      // component: lossPwdVC
+      component: resolve => require(['@/pages/lossPwd2'], resolve)
     },
   ]
 })

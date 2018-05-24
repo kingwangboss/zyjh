@@ -12,7 +12,7 @@
                 </mt-tab-container-item>
                 
                 <mt-tab-container-item id="lishi">
-                    
+                    <lishikaijiang :lishi="lishiData"></lishikaijiang>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="wo">
                     
@@ -42,8 +42,8 @@
 <script>
 import mHeader from "../components/hearder/Hearder";
 import kjview from "../components/kjview/kjview";
-import sha256 from "../util/sha256";
 import plan from "./plan";
+import lishikaijiang from "./lishikaijiang";
 import wo from "./wo";
 const titleList = [
   {
@@ -173,7 +173,8 @@ export default {
     mHeader,
     kjview,
     plan,
-    wo
+    lishikaijiang,
+    wo,
   },
   watch: {
     selected(val, oldVal) {
@@ -246,7 +247,7 @@ export default {
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("CurrentLottery", "0");
-      data.append("Sign", sha256.sha256(signStr).toUpperCase());
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
@@ -281,7 +282,7 @@ export default {
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("CurrentLottery", "0");
-      data.append("Sign", sha256.sha256(signStr).toUpperCase());
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
       //getClock握手
       this.$http
         .post(localStorage.SiteUrl, data)
@@ -331,7 +332,7 @@ export default {
       data.append("AutoOpt", "0");
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
-      data.append("Sign", sha256.sha256(signStr).toUpperCase());
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
@@ -369,7 +370,7 @@ export default {
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("PlayTypeName", localStorage.playtype);
-      data.append("Sign", sha256.sha256(signStr).toUpperCase());
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
@@ -451,7 +452,7 @@ export default {
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("Page", "1");
-      data.append("Sign", sha256.sha256(signStr).toUpperCase());
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
 
       this.$http
         .post(localStorage.SiteUrl, data)

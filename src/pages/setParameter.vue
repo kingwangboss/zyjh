@@ -201,7 +201,7 @@
 
   .bottom-btn111 {
     margin: 15px 4px;
-    // min-width: 28px;
+    min-width: 29px;
     font-size: 13px;
     padding: 5px 5.5px;
     color: rgb(135, 135, 135);
@@ -212,7 +212,7 @@
   .bottom-btn222 {
     margin: 15px 4px;
     // margin: 1px;
-    // min-width: 28px;
+    min-width: 29px;
     font-size: 13px;
     padding: 5px 5.5px;
     border-radius: 0;

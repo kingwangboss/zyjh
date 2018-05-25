@@ -1,11 +1,12 @@
 <template>
-    <div>{{lishiData}}</div>
+  <div>
+    <cell :data="lishiData"></cell>
+  </div>
 </template>
 
-<style lang="less" scoped>
-</style>
 
 <script>
+import cell from "../components/lishicell/lishicell";
 export default {
   name: "lishikaijiang",
   props: ["lishi"],
@@ -16,10 +17,9 @@ export default {
   },
 
   components: {
-    // cell
+    cell
   },
   created() {
-    // this.lishiData = data.KJArr;
     this.lishiData = this.lishi;
   },
   watch: {
@@ -27,6 +27,11 @@ export default {
       this.lishiData = this.lishi;
     }
   },
-  
+  methods: {
+   
+  },
+  mounted() {
+    
+  }
 };
 </script>

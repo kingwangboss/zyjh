@@ -69,5 +69,11 @@ export default new Router({
       // component: lossPwdVC
       component: resolve => require(['@/pages/lossPwd2'], resolve)
     },
+    {
+      path: '/error',
+      name: 'error',
+      // component: error
+      component: resolve => require(['@/pages/error'], resolve),
+    },
   ]
 })

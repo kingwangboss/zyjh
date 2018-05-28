@@ -35,6 +35,30 @@ export default new Router({
       component: resolve => require(['@/pages/changePlan'], resolve),
     },
     {
+      path: '/shujufenxi/setting1',
+      name: 'setting1',
+      // component: setting1
+      component: resolve => require(['@/pages/shujufenxi/setting1'], resolve),
+    },
+    {
+      path: '/shujufenxi/setting2',
+      name: 'setting2',
+      // component: setting2
+      component: resolve => require(['@/pages/shujufenxi/setting2'], resolve),
+    },
+    {
+      path: '/shujufenxi/setting3',
+      name: 'setting3',
+      // component: setting3
+      component: resolve => require(['@/pages/shujufenxi/setting3'], resolve),
+    },
+    {
+      path: '/shujufenxi/setting4',
+      name: 'setting4',
+      // component: setting4
+      component: resolve => require(['@/pages/shujufenxi/setting4'], resolve),
+    },
+    {
       path: '/routerPush',
       name: 'routerPush',
       // component: routerPush

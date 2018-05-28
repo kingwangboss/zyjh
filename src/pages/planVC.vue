@@ -8,7 +8,7 @@
                     <plan :plandata="PlanData" v-if="planflag"></plan>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="shujufenxi">
-                    
+                    <shujufenxi></shujufenxi>
                 </mt-tab-container-item>
                 
                 <mt-tab-container-item id="lishi">
@@ -43,6 +43,7 @@
 import mHeader from "../components/hearder/Hearder";
 import kjview from "../components/kjview/kjview";
 import plan from "./plan";
+import shujufenxi from "./shujufenxi";
 import lishikaijiang from "./lishikaijiang";
 import wo from "./wo";
 const titleList = [
@@ -135,8 +136,6 @@ export default {
     } else if (localStorage.tab === "shujufenxi") {
       this.title = {
         text: "数据分析",
-        showBack: false,
-        showQH: false,
         setting: true
       };
     } else if (localStorage.tab === "suoshui") {
@@ -173,6 +172,7 @@ export default {
     mHeader,
     kjview,
     plan,
+    shujufenxi,
     lishikaijiang,
     wo,
   },

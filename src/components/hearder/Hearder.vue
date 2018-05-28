@@ -19,9 +19,9 @@
                     <img src="../../assets/sousuobtn.png" alt="搜索" />
                 </span>
 
-                <!-- <span v-if="title.setting" class="right" @click="setting">
+                <span v-if="title.setting" class="right" @click="setting">
                     <img src="../../assets/settings.png" alt="设置" />
-                </span> -->
+                </span>
 
                 <span v-if="title.ok" class="right" @click="okClick">
                     <span>确定</span>
@@ -108,6 +108,20 @@ export default {
     },
     qhCaizhong() {
       this.$router.push("/XZcaizhong");
+    },
+
+    setting() {
+      console.log(localStorage.shujufenxi);
+      if (localStorage.shujufenxi == "1") {
+        this.$router.push("/shujufenxi/setting1");
+      } else if (localStorage.shujufenxi == "2") {
+        this.$router.push("/shujufenxi/setting2");
+      } else if (localStorage.shujufenxi == "3") {
+        this.$router.push("/shujufenxi/setting3");
+      } else if (localStorage.shujufenxi == "4") {
+        this.$router.push("/shujufenxi/setting4");
+      } else {
+      }
     },
     
     back() {

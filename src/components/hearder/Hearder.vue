@@ -123,6 +123,69 @@ export default {
       } else {
       }
     },
+    okClick() {
+      console.log("确定");
+      if (localStorage.shujufenxi == "1") {
+        console.log(localStorage.selectKeyNumberName1.split(","));
+        console.log(localStorage.allKeyNumName1);
+        var selectNum = [];
+        for (
+          var j = 0;
+          j < localStorage.selectKeyNumberName1.split(",").length;
+          j++
+        ) {
+          for (
+            var i = 0;
+            i < localStorage.allKeyNumName1.split(",").length;
+            i++
+          ) {
+            if (
+              localStorage.selectKeyNumberName1.split(",")[j] ==
+              localStorage.allKeyNumName1.split(",")[i]
+            ) {
+              selectNum.push(i);
+            } else {
+            }
+          }
+        }
+        localStorage.keyNum1 = selectNum;
+        this.$router.go(-1);
+        console.log(selectNum);
+      } else if (localStorage.shujufenxi == "2") {
+        console.log(localStorage.selectKeyNumberName2.split(","));
+        console.log(localStorage.allKeyNumName2);
+        var selectNum = [];
+        for (
+          var j = 0;
+          j < localStorage.selectKeyNumberName2.split(",").length;
+          j++
+        ) {
+          for (
+            var i = 0;
+            i < localStorage.allKeyNumName2.split(",").length;
+            i++
+          ) {
+            if (
+              localStorage.selectKeyNumberName2.split(",")[j] ==
+              localStorage.allKeyNumName2.split(",")[i]
+            ) {
+              selectNum.push(i);
+            } else {
+            }
+          }
+        }
+        localStorage.keyNum2 = selectNum;
+        this.$router.go(-1);
+        console.log(selectNum);
+      } else if (localStorage.shujufenxi == "3") {
+        localStorage.Norm1 = localStorage.selectKeyNumberName3;
+        this.$router.go(-1);
+      } else if (localStorage.shujufenxi == "4") {
+        localStorage.Norm2 = localStorage.selectKeyNumberName4;
+        this.$router.go(-1);
+      } else {
+      }
+    },
     
     back() {
       this.$router.go(-1);

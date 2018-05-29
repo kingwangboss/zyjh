@@ -5,7 +5,7 @@
         <div v-show="AuthType != '1'" class="middlecontainer">
             <!-- <span class="textbtn first" style="border-left-width: 1px;" @click="xzCaizhongClick">选择彩种</span> -->
             <span class="textbtn" style="border-left-width: 1px;" @click="changePlanClick">更改计划</span>
-            <span class="textbtn" @click="planShareClick">计划分享</span>
+            <!-- <span class="textbtn" @click="planShareClick">计划分享</span> -->
             <span class="textbtn" @click="qhClick">切换公式</span>
             <span class="textbtn" @click="selectNum">近{{PlanData.CycleCount}}期
                 <img class="icon" src="../assets/xl.png"/>
@@ -50,7 +50,7 @@
     .textbtn {
       margin: 0px 5px;
       font-size: 12px;
-      width: 22%;
+      width: 32%;
       margin-top: 10px;
       margin-bottom: 10px;
       line-height: 30px;

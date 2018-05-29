@@ -12,7 +12,7 @@
                     <!-- <el-button v-show="isSelect(item)" type="text" class="btnSelect" v-for="item in KeyNumbers" :key="item.toString()" @click="addBtn(item)">{{item}}</el-button>
                     <el-button v-show="!isSelect(item)" type="text" class="btn" v-for="item in KeyNumbers" :key="item.toString()" @click="addBtn(item)">{{item}}</el-button> -->
                     <el-button :class="{'btnSelect':selectKeyNumberName1.indexOf(item) > -1}" type="text" class="btn" v-for="item in KeyNumbers" :key="item.toString()" @click="addBtn(item)">{{item}}
-                        <img src="../../assets/you_image.png" v-if="selectKeyNumberName1.indexOf(item) > -1" class="you_image_select" alt="">
+                        <!-- <img src="../../assets/you_image.png" v-if="selectKeyNumberName1.indexOf(item) > -1" class="you_image_select" alt=""> -->
                         <!-- <img src="" v-else class="you_image" alt=""> -->
                     </el-button>
                 </div>
@@ -38,53 +38,53 @@
     flex-direction: column;
 
     .btn {
-        height: 30px;
-        align-content: center;
-        float: left;
-        margin-left: 10px;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        padding: 0px 20px 0px 20px;
-        font-size: 13px;
-        color: black;
-        // background-size: 100% 100%;
-        // background-image: url('../../../static/images/Select-05.png')
-        border-radius: 0px;
-        border: 1px solid rgb(222, 222, 222);
-    }
-    .btnSelect {
-        outline: none;
-        height: 30px;
-        line-height: 30px;
-        align-content: center;
-        float: left;
-        margin-left: 10px;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        padding: 0px 0px 0px 20px;
-        font-size: 13px;
-        color: #f82b56;
-        // background-size: 100% 100%;
-        // background-image: url('../../../static/images/Select-06.png')
-        border-radius: 0px;
-        border: 1px solid rgb(228, 69, 90);
-    }
-    .you_image_select {
-        // width: 20px;
-        height: 20px;
-        position: relative;
-        right: 0px;
-        bottom: -8px;
-    }
-    .you_image{
-        // width: 20px;
-        height: 20px;
-        position: relative;
-        right: 0px;
-        bottom: -8px;
-    }
+    height: 30px;
+    align-content: center;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px 0px 15px;
+    font-size: 13px;
+    color: black;
+    // background-size: 100% 100%;
+    // background-image: url('../../../static/images/Select-05.png')
+    border-radius: 5px;
+    // border: 1px solid rgb(222, 222, 222);
+    border: 1px solid #dddddd;
+  }
+  .btnSelect {
+    height: 30px;
+    line-height: 30px;
+    align-content: center;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px 0px 15px;
+    font-size: 13px;
+    color: #fc5c42;
+    // background-size: 100% 100%;
+    // background-image: url('../../../static/images/Select-06.png')
+    border-radius: 5px;
+    border: 1px solid #fc5c42;
+  }
+  .you_image_select {
+    // width: 20px;
+    height: 20px;
+    position: relative;
+    right: 0px;
+    bottom: -8px;
+  }
+  .you_image {
+    // width: 20px;
+    height: 20px;
+    position: relative;
+    right: 0px;
+    bottom: -8px;
+  }
 }
 </style>
 

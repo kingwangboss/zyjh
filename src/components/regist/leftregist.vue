@@ -55,7 +55,7 @@
 }
 .container {
   padding-top: 10%;
-  padding-bottom: 40%;
+  padding-bottom: 50%;
   background: rgb(235, 235, 235);
   #bundle > .juzhong;
   .div-bor {

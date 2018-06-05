@@ -208,6 +208,7 @@
 
 <script>
 import mHeader from "../components/hearder/Hearder";
+import { Toast, MessageBox } from "mint-ui";
 export default {
   name: "lossPwdVC",
   data() {

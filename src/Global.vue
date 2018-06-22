@@ -1,6 +1,7 @@
 <script type="text/javascript">
 
-
+  
+  const AppVersion = "2.0";
 
   export default{
       url,

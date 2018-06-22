@@ -129,6 +129,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-start;
+  margin-bottom: 1.5vw;
   // border-bottom: 1px solid #d8d8d8;
 }
 
@@ -137,8 +138,8 @@
   width: 20%;
   align-content: center;
   margin-left: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
   display: flex;
   flex-direction: row;
   font-size: 14px;
@@ -146,11 +147,11 @@
 
 .psview {
   color: #999999;
-  font-size: 12px;
+  font-size: 2vw;
 }
 
 .psvalue {
-  font-size: 12px;
+  font-size: 2vw;
   padding-left: 3px;
   color: #ff0000;
   font-weight: bold;
@@ -159,7 +160,7 @@
 
 .detail-bottom {
   background: #fff;
-  height: 1000rpx;
+  // height: 1000rpx;
 }
 
 .bottom-cell {

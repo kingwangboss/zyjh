@@ -111,6 +111,16 @@ export default {
   components: {
     mHeader
   },
+
+  watch: {
+    ind: function(now, old) {
+      if (now) {
+        this.title.changeOK = true;
+      } else {
+        this.title.changeOK = false;
+      }
+    }
+  },
   methods: {
     getData() {
       let data = new FormData();

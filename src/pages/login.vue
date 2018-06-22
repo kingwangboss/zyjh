@@ -244,11 +244,6 @@ export default {
       }
     },
     submit: function(event) {
-      if (this.user.sid) {
-      } else {
-        this.user.sid = "2";
-        localStorage.czname = "北京PK10";
-      }
 
       this.$show.open();
       if (this.user.sid) {

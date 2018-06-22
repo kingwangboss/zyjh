@@ -9,14 +9,22 @@ axios.defaults.baseURL = '';
 // http request 拦截器
 axios.interceptors.request.use(
   config => {
-    
+
     return config
 
   }, error => {
-    
-    Message.error({
-      message: '加载超时'
-    })
+    if (localStorage.sid && localStorage.Token && localStorage.tokenCode) {
+      Message.error({
+        message: '加载超时'
+      })
+    } else {
+      if (localStorage.sid) {
+        router.push("/login");
+      } else {
+        router.push("/XZcaizhong");
+      }
+    }
+
     return Promise.reject(error)
   }
 );
@@ -154,9 +162,17 @@ axios.interceptors.response.use(
     }
   }, error => {
     // loadinginstace.close()
-    Message.error({
-      message: '加载失败'
-    })
+    if (localStorage.sid && localStorage.Token && localStorage.tokenCode) {
+      Message.error({
+        message: '加载超时'
+      })
+    } else {
+      if (localStorage.sid) {
+        router.push("/login");
+      } else {
+        router.push("/XZcaizhong");
+      }
+    }
     return Promise.reject(error)
   }
 );

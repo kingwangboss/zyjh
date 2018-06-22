@@ -244,7 +244,6 @@ export default {
       }
     },
     submit: function(event) {
-
       this.$show.open();
       if (this.user.sid) {
       } else {
@@ -305,7 +304,11 @@ export default {
   },
 
   created() {
-    this.user.sid = localStorage.sid;
+    if (localStorage.sid) {
+      this.user.sid = localStorage.sid;
+    } else {
+      this.$router.push("/XZcaizhong");
+    }
   }
 };
 </script>

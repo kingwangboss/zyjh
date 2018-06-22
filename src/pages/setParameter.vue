@@ -200,7 +200,7 @@
   background: #fff;
 
   .bottom-btn111 {
-    margin: 15px 4px;
+    margin: 5px 4px;
     min-width: 29px;
     font-size: 13px;
     padding: 5px 5.5px;
@@ -210,7 +210,7 @@
     border: 1px solid #ffb1b1;
   }
   .bottom-btn222 {
-    margin: 15px 4px;
+    margin: 5px 4px;
     // margin: 1px;
     min-width: 29px;
     font-size: 13px;

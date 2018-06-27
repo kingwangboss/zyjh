@@ -15,7 +15,7 @@
                     <lishikaijiang :lishi="lishiData"></lishikaijiang>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="wo">
-                    
+                    <wo></wo>
                 </mt-tab-container-item>
             </mt-tab-container>
         </div>
@@ -489,5 +489,6 @@ export default {
 
 .mint-tabbar > .mint-tab-item.is-selected {
   color: rgb(243, 0, 0);
+  background: rgb(249, 249, 249);
 }
 </style>

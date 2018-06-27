@@ -51,6 +51,7 @@
     height: 44px;
     // background-color: rgb(219, 60, 62);
     background: url(../../assets/jianbian.png);
+    background-size: 100%;
     line-height: 44px;
     text-align: center;
     .title-wrapper {

@@ -94,6 +94,12 @@ export default new Router({
       component: resolve => require(['@/pages/lossPwd2'], resolve)
     },
     {
+      path: '/wo/dailixiaoshou',
+      name: 'dailixiaoshou',
+      // component: about
+      component: resolve => require(['@/pages/wo/dailixiaoshou'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

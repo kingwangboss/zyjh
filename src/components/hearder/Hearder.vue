@@ -46,7 +46,7 @@
   right: 0;
   left: 0;
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   .header {
     height: 44px;
     // background-color: rgb(219, 60, 62);

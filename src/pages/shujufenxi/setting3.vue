@@ -8,7 +8,7 @@
             <img style="height:4px;width:100%;" src="../../assets/Search-07.png" mode="scaleToFill"></img>
 
 
-            <div class="planItemCell" v-for="item in listData.Norms" :key="item.toString()">
+            <div class="planItemCell" v-for="item in listData.Norms">
                 <label class="lab" style="font-size:14px; margin-top:10px;margin-left:20px; font-weight:900;">{{item.Group}}</label>
                 <div>
                     <!-- <el-button type="text" class="btn" v-for="item1 in item.NormList" :key="item1.toString()" @click="addBtn(item)">{{item1}}</el-button> -->

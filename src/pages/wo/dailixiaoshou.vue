@@ -4,10 +4,21 @@
 
         <div class="line">
         </div>
-        <div class="cell" @click="buyClick">
+        <div class="cell" @click="zaixianchongzhi">
             <div class="cell-left">
                 <img src="../../assets/wo/cz.png" alt="">
                 <span>在线充值</span>
+            </div>
+            
+            <div class="iv-arrow"></div>
+        </div>
+
+        <div class="line">
+        </div>
+        <div class="cell" @click="goumaishouquan">
+            <div class="cell-left">
+                <img src="../../assets/wo/cz.png" alt="">
+                <span>购买授权</span>
             </div>
             
             <div class="iv-arrow"></div>
@@ -122,7 +133,7 @@ export default {
         showBack: true
       },
     //   AgentState: localStorage.AgentState,
-      AgentState:1,
+      AgentState:3,
     };
   },
   components: {
@@ -130,6 +141,13 @@ export default {
   },
   mounted() {
     
+  },
+  methods:{
+    zaixianchongzhi(){
+      this.$router.push({
+        path: "/wo/zaixianchongzhi"
+      })
+    }
   }
 };
 </script>

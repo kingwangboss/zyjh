@@ -4,42 +4,64 @@
       <img class="userinfo-avatar" src="../assets/wo/User-104.png" background-size="cover"></img>
       <span class="userinfo-nickname">{{nickname}}</span>
     </div>
+
+    <div class="middle-tip" v-show="AgentState == 3" @click="chengweidailishang">
+      <div class="left">限时申请超级代理</div>
+      <span class="right">截止日期</span>
+    </div>
+
+    <div class="middle" v-show="AgentState == 3" @click="chengweidailishang">
+      <img class="left" src="../assets/wo/icon3.png" alt="">
+      <marquee class="center" behavior="scroll" direction="left">3折销售</marquee>
+      <img class="right" src="../assets/wo/icon4.png" alt="">
+    </div>
+
+    <div class="line"></div>
+
+    <div class="bottom-tip">
+      服务
+    </div>
     <!-- //0,2不显示
-  //1,4代理商
-  //3,在线充值 -->
+        //1,4代理商
+        //3,在线充值 -->
     <div class="bottom">
-      <div v-show="AgentState == 3" class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth+'px'}">
-        <img src="../assets/wo/zxcz.png" @click="onlineChongzhi"></img>
-        <span>在线充值</span>
+      <div v-show="AgentState == 3" class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth - 20+'px'}" @click="chengweidailishang">
+        <img src="../assets/wo/dls.png"></img>
+        <span>代理机制2</span>
       </div>
 
-      <div v-show="AgentState == 1 || AgentState == 4" class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth+'px'}">
+      <div v-show="AgentState == 1 || AgentState == 4" class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth -20 +'px'}" @click="xiaoshou">
+        <img src="../assets/wo/dls.png"></img>
+        <span>代理系统</span>
+      </div>
+
+      <div v-show="AgentState == 0" class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth - 20 +'px'}">
         <img src="../assets/wo/dls.png" @click="xiaoshou"></img>
-        <span>代理销售</span>
+        <span>代理机制1</span>
       </div>
 
 
-      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth+'px'}" @click="kefuClick">
+      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth - 20 +'px'}" @click="kefuClick">
         <img src="../assets/wo/zxkf.png"></img>
         <span>在线客服</span>
       </div>
 
-      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth +'px'}" @click="shouquanClick">
+      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth -20  +'px'}" @click="shouquanClick">
         <img src="../assets/wo/wdsq.png"></img>
         <span>我的授权</span>
       </div>
 
-      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth+'px'}" @click="XGpwdClick">
+      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth - 20+'px'}" @click="XGpwdClick">
         <img src="../assets/wo/mmgl.png"></img>
         <span>密码管理</span>
       </div>
 
-      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth+'px'}" @click="feedbackClick">
+      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth - 20+'px'}" @click="feedbackClick">
         <img src="../assets/wo/yjfk.png"></img>
         <span>意见反馈</span>
       </div>
 
-      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth+'px'}" @click="aboutClick">
+      <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth -20+'px'}" @click="aboutClick">
         <img src="../assets/wo/gywm.png"></img>
         <span>关于我们</span>
       </div>
@@ -54,10 +76,10 @@
 
 <style lang="less" scoped>
 .maincontainer{
-  position: fixed;
+  // position: fixed;
   width: 100%;
   height: 100%;
-  background: rgb(240, 240, 240);
+  // background: rgb(240, 240, 240);
 }
 .userinfo {
   display: flex;
@@ -81,9 +103,52 @@
   padding-bottom: 10px;
 }
 
-.middle {
+.middle-tip{
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  .left{
+    font-weight: bold;
+    margin:10px 0 10px 10px; 
+    text-align: left;
+  }
+  .right{
+    background: rgb(255, 111, 4);
+    height: 20px;
+    padding: 0px 4px;
+    line-height: 20px;
+    margin:8px 0 8px 10px;
+    font-size: 14px;
+    color: white;
+    border-radius: 3px;
+  }
+}
+
+.middle{
+  display: flex;
+  flex-direction: row;
+  height: 54px;
+  line-height: 54px;
+  .left{
+    width: 30px;
+    height: 30px;
+    margin: 12px 15px;
+  }
+  .right{
+    width: 20px;
+    height: 20px;
+    margin: 17px 15px;
+  }
+  .center{
+    width: 100%;
+    color: rgb(255, 111, 4);
+  }
+}
+
+.line {
   background: #F0F0F0;
-  height: 10px;
+  height: 5px;
 }
 
 .rightLine{
@@ -91,11 +156,21 @@
   height: 10px;
 }
 
+.bottom-tip{
+  margin-bottom: 1px;
+  background: white;
+  padding: 10px 0 10px 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
 .bottom {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  margin: 5px 5px 0 5px;
+  // margin: 5px 5px 0 5px;
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
 }
 
 .bottom-cell {
@@ -110,7 +185,7 @@
   -webkit-justify-content: center;
   justify-content: center;
   background: white;
-  margin: 5px;
+  // margin: 5px;
   span{
     font-size: 12px;
     // line-height: 20px;
@@ -160,7 +235,7 @@ export default {
       nickname: localStorage.Username,
       paytype: localStorage.PayType,
       // AgentState: localStorage.AgentState,
-      AgentState:1,
+      AgentState:3,
     };
   },
   mounted() {
@@ -229,6 +304,11 @@ export default {
       this.$router.push({
         path: "/wo/dailixiaoshou"
       })
+    },
+    chengweidailishang(){
+      this.$router.push({
+        path: "/wo/chengweidailishang"
+      })
     }
   },
   watch: {
@@ -253,7 +333,7 @@ export default {
         colnum = 6 > colnum ? colnum : 6;
         var rownum = 6 / colnum; //行
         margin = 5; //间距
-        ojwidth = (this.screenWidth -10 - 2 * (margin) * colnum) / colnum ; //格子的宽
+        ojwidth = this.screenWidth / colnum ; //格子的宽
         return ojwidth;
       },
       // setter

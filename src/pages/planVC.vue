@@ -31,7 +31,7 @@
                 <img slot="icon" :src="tabList['lishi'].src"> 历史开奖
             </mt-tab-item>
             <mt-tab-item id="wo">
-                <img slot="icon" :src="tabList['wo'].src"> 我
+                <img slot="icon" :src="tabList['wo'].src"> {{AgentName}}
             </mt-tab-item>
 
         </mt-tabbar>
@@ -113,7 +113,8 @@ export default {
       flag: false,
       planflag: false,
       PlanData: "",
-      lishiData: ""
+      lishiData: "",
+      AgentName:localStorage.AgentName,
     };
   },
   created() {

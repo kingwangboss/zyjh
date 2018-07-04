@@ -100,6 +100,12 @@ export default new Router({
       component: resolve => require(['@/pages/wo/dailixiaoshou'], resolve),
     },
     {
+      path: '/wo/zaixianchongzhi',
+      name: 'zaixianchongzhi',
+      // component: error
+      component: resolve => require(['@/pages/wo/zaixianchongzhi'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

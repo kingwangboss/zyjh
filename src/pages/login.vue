@@ -292,6 +292,7 @@ export default {
             localStorage.user_name = this.user.name;
             localStorage.user_pwd = this.user.pwd;
             localStorage.AgentState = res.data.Data.AgentState;
+            localStorage.AgentName = res.data.Data.AgentName;
             this.$router.push({
               path: "/planVC"
             });

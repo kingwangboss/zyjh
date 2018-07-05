@@ -219,28 +219,28 @@ export default {
     },
 
     getVcode() {
-        var that = this;
-        let data = new FormData();
-        data.append("Action", "GetVCode");
-        data.append("SID", localStorage.sid);
-        this.$http.post(this.$global.url, data).then(res => {
-          console.log(res);
-          this.mobile.vcode = res.data.Data;
-          let data1 = new FormData();
-          data1.append("Action", "SendRegSMS");
-          data1.append("SID", localStorage.sid);
-          data1.append("Mobile", that.mobile.num);
-          data1.append("AppType", that.$global.AppType);
-          data1.append("VCode", that.mobile.vcode);
-          that.$http
-            .post(this.$global.url, data1)
-            .then(res => {
-              console.log(res);
-            })
-            .catch(error => {
-              console.log(error);
-            });
-        });
+      var that = this;
+      let data = new FormData();
+      data.append("Action", "GetVCode");
+      data.append("SID", localStorage.sid);
+      this.$http.post(this.$global.url, data).then(res => {
+        console.log(res);
+        this.mobile.vcode = res.data.Data;
+        let data1 = new FormData();
+        data1.append("Action", "SendRegSMS");
+        data1.append("SID", localStorage.sid);
+        data1.append("Mobile", that.mobile.num);
+        data1.append("AppType", that.$global.AppType);
+        data1.append("VCode", that.mobile.vcode);
+        that.$http
+          .post(this.$global.url, data1)
+          .then(res => {
+            console.log(res);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      });
     },
 
     submit: function(event) {

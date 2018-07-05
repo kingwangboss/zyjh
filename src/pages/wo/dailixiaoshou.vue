@@ -18,7 +18,8 @@
         <div class="cell" @click="goumaishouquan">
             <div class="cell-left">
                 <img src="../../assets/wo/cz.png" alt="">
-                <span>购买授权</span>
+                <span v-show="AuthType>0">续费授权</span>
+                <span v-show="AuthType==-1">购买授权</span>
             </div>
             
             <div class="iv-arrow"></div>
@@ -26,7 +27,14 @@
 
         <div class="line">
         </div>
-        <div class="cell" @click="kefuClick">
+        <div class="cell" style="#333" v-show="AuthType == -1">
+            <div class="cell-left">
+                <img src="../../assets/wo/sq.png" alt="">
+                <span>代理授权</span>
+            </div>
+            <div class="iv-arrow"></div>
+        </div>
+        <div class="cell" @click="kefuClick" v-show="AuthType > 0">
             <div class="cell-left">
                 <img src="../../assets/wo/sq.png" alt="">
                 <span>代理授权</span>
@@ -132,8 +140,9 @@ export default {
         text: "代理销售",
         showBack: true
       },
-    //   AgentState: localStorage.AgentState,
-      AgentState:3,
+      AgentState: localStorage.AgentState,
+      // AgentState:3,
+      AuthType:localStorage.AuthType,
     };
   },
   components: {

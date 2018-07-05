@@ -7,12 +7,12 @@
 
     <div class="middle-tip" v-show="AgentState == 3" @click="chengweidailishang">
       <div class="left">限时申请超级代理</div>
-      <span class="right">截止日期</span>
+      <span class="right">截止日期 {{RechargeFreeTime}}</span>
     </div>
 
     <div class="middle" v-show="AgentState == 3" @click="chengweidailishang">
       <img class="left" src="../assets/wo/icon3.png" alt="">
-      <marquee class="center" behavior="scroll" direction="left">3折销售</marquee>
+      <marquee class="center" behavior="scroll" direction="left">{{IndexRemark}}</marquee>
       <img class="right" src="../assets/wo/icon4.png" alt="">
     </div>
 
@@ -75,7 +75,7 @@
 </template>
 
 <style lang="less" scoped>
-.maincontainer{
+.maincontainer {
   // position: fixed;
   width: 100%;
   height: 100%;
@@ -103,60 +103,60 @@
   padding-bottom: 10px;
 }
 
-.middle-tip{
+.middle-tip {
   display: flex;
   flex-direction: row;
   background: white;
   border-bottom: 1px solid #f0f0f0;
-  .left{
+  .left {
     font-weight: bold;
-    margin:10px 0 10px 10px; 
+    margin: 10px 0 10px 10px;
     text-align: left;
   }
-  .right{
+  .right {
     background: rgb(255, 111, 4);
     height: 20px;
     padding: 0px 4px;
     line-height: 20px;
-    margin:8px 0 8px 10px;
+    margin: 8px 0 8px 10px;
     font-size: 14px;
     color: white;
     border-radius: 3px;
   }
 }
 
-.middle{
+.middle {
   display: flex;
   flex-direction: row;
   height: 54px;
   line-height: 54px;
-  .left{
+  .left {
     width: 30px;
     height: 30px;
     margin: 12px 15px;
   }
-  .right{
+  .right {
     width: 20px;
     height: 20px;
     margin: 17px 15px;
   }
-  .center{
+  .center {
     width: 100%;
     color: rgb(255, 111, 4);
   }
 }
 
 .line {
-  background: #F0F0F0;
+  background: #f0f0f0;
   height: 5px;
 }
 
-.rightLine{
+.rightLine {
   background: gray;
   height: 10px;
 }
 
-.bottom-tip{
+.bottom-tip {
   margin-bottom: 1px;
   background: white;
   padding: 10px 0 10px 10px;
@@ -169,14 +169,14 @@
   width: 100%;
   flex-wrap: wrap;
   // margin: 5px 5px 0 5px;
-  border-top: 1px solid #F0F0F0;
-  border-bottom: 1px solid #F0F0F0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .bottom-cell {
   width: 124px;
   height: 124px;
-  // border: 1px solid gray; 
+  // border: 1px solid gray;
   // border-style: none solid solid none;
   flex-direction: column;
   display: -webkit-flex;
@@ -186,7 +186,7 @@
   justify-content: center;
   background: white;
   // margin: 5px;
-  span{
+  span {
     font-size: 12px;
     // line-height: 20px;
     margin-top: 10px;
@@ -198,7 +198,6 @@
   height: 40px;
   margin-top: -10px;
 }
-
 
 .bottom-cell text {
   text-align: center;
@@ -235,7 +234,9 @@ export default {
       nickname: localStorage.Username,
       paytype: localStorage.PayType,
       // AgentState: localStorage.AgentState,
-      AgentState:3,
+      AgentState: 1,
+      IndexRemark:"",
+      RechargeFreeTime:"",
     };
   },
   mounted() {
@@ -246,8 +247,34 @@ export default {
         that.screenWidth = window.screenWidth;
       })();
     };
+    that.getData();
   },
   methods: {
+    getData() {
+      // 请求数据
+      let tokenCode = localStorage.tokenCode;
+      let signStr =
+        "Action=GetAgentRoleInfo" +
+        "&SID=" +
+        localStorage.sid +
+        "&Token=" +
+        localStorage.Token +
+        tokenCode;
+      let data = new FormData();
+      data.append("Action", "GetAgentRoleInfo");
+      data.append("SID", localStorage.sid);
+      data.append("Token", localStorage.Token);
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
+      this.$http
+        .post(this.$global.url, data)
+        .then(res => {
+          this.IndexRemark = res.data.Data.IndexRemark;
+          this.RechargeFreeTime = res.data.Data.RechargeFreeTime;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
     loginOut() {
       // localStorage.clear();
       localStorage.isLogin = false;
@@ -278,37 +305,37 @@ export default {
     shouquanClick() {
       this.$router.push({
         path: "/wo/shouquan"
-      })
+      });
     },
     XGpwdClick() {
       this.$router.push({
         path: "/wo/XGpwd"
-      })
+      });
     },
     feedbackClick() {
       this.$router.push({
         path: "/wo/feeback"
-      })
+      });
     },
     aboutClick() {
       this.$router.push({
         path: "/wo/about"
-      })
+      });
     },
     onlineChongzhi() {
       this.$router.push({
         path: "/wo/chongzhi"
-      })
+      });
     },
     xiaoshou() {
       this.$router.push({
         path: "/wo/dailixiaoshou"
-      })
+      });
     },
-    chengweidailishang(){
+    chengweidailishang() {
       this.$router.push({
         path: "/wo/chengweidailishang"
-      })
+      });
     }
   },
   watch: {
@@ -333,7 +360,7 @@ export default {
         colnum = 6 > colnum ? colnum : 6;
         var rownum = 6 / colnum; //行
         margin = 5; //间距
-        ojwidth = this.screenWidth / colnum ; //格子的宽
+        ojwidth = this.screenWidth / colnum; //格子的宽
         return ojwidth;
       },
       // setter

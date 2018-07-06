@@ -99,11 +99,10 @@ export default {
         text: "我要提现",
         showBack: true
       },
-      isA: false,
-      tixianData:'',
+      isA: localStorage.isA == 'true' ? true : false,
+      tixianData: ""
     };
   },
-
   components: {
     mHeader,
     leftChongzhi,
@@ -112,6 +111,7 @@ export default {
   methods: {
     btnClick(event) {
       this.isA = !this.isA;
+      localStorage.isA = this.isA;
     },
     getData() {
       let tokenCode = localStorage.tokenCode;
@@ -130,12 +130,12 @@ export default {
       this.$http
         .post(this.$global.url, data)
         .then(res => {
-            this.tixianData = res.data.Data;
+          this.tixianData = res.data.Data;
         })
         .catch(error => {
           console.log(error);
         });
-    }
+    },
   },
   mounted() {
     this.getData();

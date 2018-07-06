@@ -100,12 +100,13 @@
 <script>
 export default {
   props: ["tixianData"],
+  inject: ["reload"],
   data() {
     return {
       tixian: Object,
       disabled: false,
       price: "",
-      ps: "",
+      ps: ""
     };
   },
   created() {
@@ -129,7 +130,7 @@ export default {
   },
   methods: {
     inputFuction() {
-      if (this.price.length > 0) {
+      if (this.price > 0) {
         this.disabled = true;
       } else {
         this.disabled = false;
@@ -161,7 +162,8 @@ export default {
       this.$http
         .post(this.$global.url, data)
         .then(res => {
-
+          localStorage.isA = false;
+          this.reload();
         })
         .catch(error => {
           console.log(error);

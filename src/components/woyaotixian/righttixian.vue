@@ -129,6 +129,7 @@ export default {
       ps: ""
     };
   },
+  inject: ["reload"],
   created() {
     this.tixian = this.tixianData;
   },
@@ -160,7 +161,6 @@ export default {
       } else {
         this.disabled = false;
       }
-      console.log(this.disabled);
     },
     submit() {
       let tokenCode = localStorage.tokenCode;
@@ -196,7 +196,10 @@ export default {
       data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
       this.$http
         .post(this.$global.url, data)
-        .then(res => {})
+        .then(res => {
+          localStorage.isA = true;
+          this.reload();
+        })
         .catch(error => {
           console.log(error);
         });

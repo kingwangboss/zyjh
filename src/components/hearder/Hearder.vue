@@ -66,7 +66,7 @@
       }
       .back {
         width: 12%;
-        margin-left: -40px;
+        margin-left: -13%;
         img {
           width: 20px;
           height: 20px;

@@ -207,7 +207,7 @@ export default {
   methods: {
     inputFuction() {
       if (
-        this.mobile.num.length > 0 &&
+        this.mobile.num > 0 &&
         this.mobile.verify.length > 0 &&
         this.mobile.newpwd1.length > 0 &&
         this.mobile.newpwd2.length > 0

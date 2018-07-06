@@ -112,6 +112,12 @@ export default new Router({
       component: resolve => require(['@/pages/wo/chengweidailishang'], resolve),
     },
     {
+      path: '/wo/woyaotixian',
+      name: 'woyaotixian',
+      // component: error
+      component: resolve => require(['@/pages/wo/woyaotixian'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

@@ -17,7 +17,7 @@
         </div>
         <div class="cell" @click="goumaishouquan">
             <div class="cell-left">
-                <img src="../../assets/wo/cz.png" alt="">
+                <img src="../../assets/wo/gmsq.png" alt="">
                 <span v-show="AuthType>0">续费授权</span>
                 <span v-show="AuthType==-1">购买授权</span>
             </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="iv-arrow"></div>
         </div>
-        <div class="cell" @click="kefuClick" v-show="AuthType > 0">
+        <div class="cell" @click="dailishouquan" v-show="AuthType > 0">
             <div class="cell-left">
                 <img src="../../assets/wo/sq.png" alt="">
                 <span>代理授权</span>
@@ -44,7 +44,7 @@
 
         <div class="line" v-show="AgentState != 4">
         </div>
-        <div v-show="AgentState != 4" class="cell" @click="shouquanClick">
+        <div v-show="AgentState != 4" class="cell" @click="woyaotixian">
             <div class="cell-left">
                 <img src="../../assets/wo/tx.png" alt="">
                 <span>我要提现</span>
@@ -55,7 +55,7 @@
 
         <div class="line">
         </div>
-        <div class="cell" @click="XGpwdClick">
+        <div class="cell" @click="wodejilu">
             <div class="cell-left">
                 <img src="../../assets/wo/jl.png" alt="">
                 <span>我的记录</span>
@@ -155,6 +155,11 @@ export default {
     zaixianchongzhi(){
       this.$router.push({
         path: "/wo/zaixianchongzhi"
+      })
+    },
+    woyaotixian(){
+      this.$router.push({
+        path: "/wo/woyaotixian"
       })
     }
   }

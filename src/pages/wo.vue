@@ -68,9 +68,7 @@
 
     </div>
 
-    <div class="bottom-btndiv">
-      <el-button type="text" class="bottom-btn" @click="loginOut">退出登录</el-button>
-    </div>
+    <el-button type="text" class="bottom-btn1" @click="loginOut">退出登录</el-button>
   </div>
 </template>
 
@@ -214,7 +212,7 @@
   justify-content: center;
 }
 
-.bottom-btn {
+.bottom-btn1 {
   background: rgb(255, 111, 4);
   margin-top: 40px;
   margin-bottom: 20px;
@@ -235,8 +233,8 @@ export default {
       paytype: localStorage.PayType,
       // AgentState: localStorage.AgentState,
       AgentState: 1,
-      IndexRemark:"",
-      RechargeFreeTime:"",
+      IndexRemark: "",
+      RechargeFreeTime: ""
     };
   },
   mounted() {

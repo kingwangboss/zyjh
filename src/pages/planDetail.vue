@@ -142,16 +142,16 @@
   margin-bottom: 1.5vw;
   display: flex;
   flex-direction: row;
-  font-size: 14px;
+  font-size: 3vw;
 }
 
 .psview {
   color: #999999;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 .psvalue {
-  font-size: 2vw;
+  font-size: 3vw;
   padding-left: 3px;
   color: #ff0000;
   font-weight: bold;
@@ -185,14 +185,14 @@
         flex-wrap: nowrap;
         // width: 20%;
         min-width: 33px;
-        font-size: 12px;
+        font-size: 3vw;
         color: #000;
         align-items: center;
       }
 
       .cell-item2 {
         // width: 25px;
-        font-size: 12px;
+        font-size: 3vw;
         text-align: center;
         display: flex;
         align-items: center;
@@ -208,7 +208,7 @@
           min-width: 32px;
           // border: 1px solid rgba(84, 128, 215, 0.5);
           // border-radius: 9px;
-          font-size: 10px;
+          font-size: 3.5vw;
           color: RGB(84, 128, 215);
         }
         .btn1 {
@@ -221,7 +221,7 @@
           padding-top: 1px;
           // border: 1px solid RGBA(199, 64, 78, 0.5);
           // border-radius: 9px;
-          font-size: 10px;
+          font-size: 3.5vw;
           color: #f00;
         }
       }
@@ -229,7 +229,7 @@
       .cell-item3 {
         padding-top: 2px;
         // max-width: 80%;
-        font-size: 12px;
+        font-size: 3.5vw;
         text-align: center;
         line-height: auto;
         // padding: 10px 5px;
@@ -259,7 +259,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    font-size: 12px;
+    font-size: 3vw;
     color: #bebebe;
     padding-bottom: 5px;
     padding-left: 5px;

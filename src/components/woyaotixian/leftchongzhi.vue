@@ -72,9 +72,10 @@
 }
 
 .btnDefault {
-  position: absolute;
-  bottom: 20px;
-  left: 10%;
+  //   position: absolute;
+  //   bottom: 20px;
+  //   left: 10%;
+  margin-bottom: 20px;
   height: 40px;
   width: 80%;
   border-radius: 5px;
@@ -84,9 +85,10 @@
   font-size: 18px;
 }
 .btnEnable {
-  position: absolute;
-  bottom: 20px;
-  left: 10%;
+  //   position: absolute;
+  //   bottom: 20px;
+  //   left: 10%;
+  margin-bottom: 20px;
   height: 40px;
   width: 80%;
   border-radius: 5px;

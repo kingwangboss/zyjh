@@ -81,7 +81,10 @@
       outline: none;
       background-color: transparent;
       margin-top: 3px;
-      margin-left: -20px;
+      position: absolute;
+      left:40px;
+      top:8px;
+      // margin-left: -20px;
       font-size: 16px;
       color: black;
     }

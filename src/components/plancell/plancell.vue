@@ -64,12 +64,13 @@
 }
 
 .txt-item1 {
+  line-height: 5vw;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 5px;
   display: flex;
   width: 60px;
-  font-size: 3vw;
+  font-size: 3.5vw;
   #bundle > .juzhong;
   border-right: 1px solid #e5e5e5;
 }
@@ -79,7 +80,7 @@
   margin-bottom: 10px;
   border-right: 1px solid #e5e5e5;
   width: 10vw;
-  font-size: 3vw;
+  font-size: 3.5vw;
   background: #fff;
   text-align: center;
   display: flex;
@@ -92,7 +93,7 @@
     min-width: 32px;
     // border: 1px solid rgba(84, 128, 215, 0.5);
     // border-radius: 9px;
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: #457def;
   }
   .btn1 {
@@ -104,7 +105,7 @@
     // padding: 1px 5px;
     // border: 1px solid RGBA(199, 64, 78, 0.5);
     // border-radius: 9px;
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: #ff0000;
   }
 }
@@ -114,7 +115,7 @@
   margin-bottom: 10px;
   border-right: 1px solid #e5e5e5;
   width: 30vw;
-  font-size: 3vw;
+  font-size: 3.5vw;
   background: #fff;
   text-align: center;
   line-height: auto;
@@ -132,7 +133,7 @@
 }
 
 .baifenbi {
-  font-size: 3vw;
+  font-size: 3.5vw;
   #bundle > .juzhong;
   color: #666666;
   margin-top: 5px;

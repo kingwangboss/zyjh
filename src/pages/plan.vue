@@ -222,6 +222,7 @@ export default {
       });
     },
     qhClick() {
+      this.$show.open();
       var that = this;
       let tokenCode = localStorage.tokenCode;
       let signStr =
@@ -241,11 +242,13 @@ export default {
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
+          this.$show.close();
           console.log(res);
           that.getData();
           // that.$router.go(0);
         })
         .catch(error => {
+          this.$show.close();
           console.log(error);
         });
     }

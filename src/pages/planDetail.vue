@@ -185,14 +185,14 @@
         flex-wrap: nowrap;
         // width: 20%;
         min-width: 33px;
-        font-size: 3vw;
+        font-size: 3.5vw;
         color: #000;
         align-items: center;
       }
 
       .cell-item2 {
         // width: 25px;
-        font-size: 3vw;
+        font-size: 3.5vw;
         text-align: center;
         display: flex;
         align-items: center;
@@ -247,7 +247,7 @@
         margin-top: 10px;
         margin-right: 5px;
         // padding-left: 5px;
-        width: 40px;
+        width: 45px;
         padding: 2px 0px;
         background-image: url('../assets/bq.png');
         background-size: 100% 100%;

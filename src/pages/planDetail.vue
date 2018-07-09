@@ -243,6 +243,8 @@
         // display: flex;
         // justify-content: flex-end;
         // align-items: center;
+        height: 12px;
+        line-height: 14px;
         font-size: 10px;
         margin-top: 10px;
         margin-right: 5px;

@@ -15,6 +15,12 @@
                 
                 <span class="title">{{title.text}}</span>
 
+                <div class="vipI" v-if="title.vip" @click="vipClick">
+                  <img src="../../assets/dl/icon11.png" alt="">
+                  <span>我的特权</span>
+                </div>
+              
+
                 <span v-if="title.right" class="right" @click="right">
                     <img src="../../assets/sousuobtn.png" alt="搜索" />
                 </span>
@@ -41,6 +47,21 @@
 </template>
 
 <style lang="less" scoped>
+.vipI{
+  position: absolute;
+  left: 50%;
+  margin-left: 40px;
+  top: 4px;
+  img{
+    width: 15px;
+  }
+  span{
+    position: relative;
+    top: -3px;
+    font-size: 12px;
+    color: rgb(255, 111, 4);
+  }
+}
 .header-wrapper {
   top: 0;
   right: 0;

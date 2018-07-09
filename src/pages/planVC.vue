@@ -45,7 +45,7 @@ import kjview from "../components/kjview/kjview";
 import plan from "./plan";
 import shujufenxi from "./shujufenxi";
 import lishikaijiang from "./lishikaijiang";
-import wo from "./wo";
+import wo from "./wo1";
 const titleList = [
   {
     text: "计划追号",
@@ -157,6 +157,12 @@ export default {
       this.title = this.titleList[2];
     } else if (localStorage.tab === "wo") {
       this.title = this.titleList[3];
+      this.title.text = this.AgentName;
+      if(localStorage.AgentState != 4 && localStorage.AgentState != 5 && localStorage.AgentState != 0 && localStorage.AgentState !=3 && AgentState != 2){
+        this.title.vip = true;
+      }else{
+        this.title.vip = false;
+      }
     } else {
     }
   },
@@ -228,6 +234,7 @@ export default {
           break;
         case "wo":
           this.title = this.titleList[3];
+          this.title.text = this.AgentName;
           localStorage.tab = "wo";
           break;
       }

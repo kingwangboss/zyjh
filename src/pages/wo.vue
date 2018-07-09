@@ -21,9 +21,7 @@
     <div class="bottom-tip">
       服务
     </div>
-    <!-- //0,2不显示
-        //1,4代理商
-        //3,在线充值 -->
+    
     <div class="bottom">
       <div v-show="AgentState == 3" class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth - 20+'px'}" @click="chengweidailishang">
         <img src="../assets/wo/dls.png"></img>

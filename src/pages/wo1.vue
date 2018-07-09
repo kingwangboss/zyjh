@@ -5,34 +5,33 @@
             <span class="userinfo-nickname">{{nickname}}</span>
         </div>
 
-        <!-- 非代理 -->
-        <div class="middle-tip" v-show="AgentState == 3 || AgentState == 0" @click="chengweidailishang">
+        <div class="middle-tip" v-if="myData.RechargeFreeTime != '' || myData.Title != '' || myData.content != '' "  @click="chengweidailishang">
             <div class="left">{{myData.Title}}</div>
             <span class="right" v-show="myData.RechargeFreeTime != ''">{{myData.RechargeFreeTime}}</span>
         </div>
 
-        <div class="middle" v-show="AgentState == 3 || AgentState == 0" @click="chengweidailishang">
+        <div class="middle" v-if="myData.RechargeFreeTime != '' || myData.Title != '' || myData.content != '' " @click="chengweidailishang">
             <img class="left" src="../assets/wo/icon3.png" alt="">
             <marquee class="center" behavior="scroll" direction="left">{{myData.content}}</marquee>
             <img class="right" src="../assets/wo/icon4.png" alt="">
         </div>
-        <!-- 代理 -->
-        <div class="dl_middle" v-show="AgentState == 1 || AgentState == 4 ">
+
+        <div class="dl_middle" v-if="ARID>0 && YesOrNoModify == 1 ">
             <div class="left">{{czname}}：</div>
             <div v-show="myData.AuthExpiration != null" style="color:rgb(255, 111, 4)" class="content">授权至{{myData.AuthExpiration}}</div>
-            <div v-show="myData.AuthExpiration == null" style="color:#bdbdbd" class="content">授权已过期</div>
-            <div v-show="myData.AuthExpiration != ''" class="right">续费</div>
-            <div v-show="myData.AuthExpiration == ''" class="right">购买</div>
+            <div v-show="myData.AuthExpiration == null" style="color:#bdbdbd" class="content">未授权</div>
+            <div v-show="myData.AuthExpiration != null" class="right">续费</div>
+            <div v-show="myData.AuthExpiration == null" class="right">购买</div>
         </div>
 
-        <!-- 非代理 -->
-        <div v-if="AgentState == 0 || AgentState == 3 || AgentState == 5">
+        <div>
             <div class="line">
             </div>
-            <div class="cell">
+            <div class="cell" @click="zhanghuyuer">
                 <div class="cell-left">
                     <img src="../assets/dl/icon1.png" alt="">
                     <span>账户余额</span>
+                    <div style="color:rgb(255, 111, 4)" class="right">￥{{myData.Fund}}</div>
                 </div>
                 
                 <div class="iv-arrow"></div>
@@ -42,46 +41,16 @@
                 <div class="cell-left">
                     <img src="../assets/dl/icon3.png" alt="">
                     <span>优惠券</span>
+                    <div style="color:rgb(255, 111, 4)" class="right">￥{{myData.TotalRewardCost}}（{{myData.AllowRewardNum}}张）</div>
                 </div>
                 
                 <div class="iv-arrow"></div>
             </div>
             <div class="line1"></div>
 
-            <div v-show="AgentState != 5" class="cell">
-                <div class="cell-left">
-                    <img src="../assets/dl/icon2.png" alt="">
-                    <span>可提现金额</span>
-                </div>
-                
-                <div class="iv-arrow"></div>
-            </div>
-        </div>
 
-        <!-- 代理 -->
-        <div v-else-if="AgentState == 1 || AgentState == 2 || AgentState == 4">
-            <div class="line">
-            </div>
-            <div class="cell">
-                <div class="cell-left">
-                    <img src="../assets/dl/icon1.png" alt="">
-                    <span>账户余额</span>
-                </div>
-                <div style="color:rgb(255, 111, 4)" class="right">￥{{myData.Fund}}</div>
-                <div class="iv-arrow"></div>
-            </div>
-            <div class="line1"></div>
-            <div class="cell">
-                <div class="cell-left">
-                    <img src="../assets/dl/icon3.png" alt="">
-                    <span>优惠券</span>
-                </div>
-                <div style="color:rgb(255, 111, 4)" class="right">￥{{myData.TotalRewardCost}}（{{myData.AllowRewardNum}}张）</div>
-                <div class="iv-arrow"></div>
-            </div>
-            <div class="line1"></div>
-
-            <div v-show="AgentState != 4 && AgentState != 2" class="cell">
+            <div v-if="YesOrNoRebate == 0 || (ARID>0 && YesOrNoModify==0)"></div>
+            <div v-else class="cell">
                 <div class="cell-left">
                     <img src="../assets/dl/icon2.png" alt="">
                     <span>可提现金额</span>
@@ -90,24 +59,44 @@
                 <div class="iv-arrow"></div>
             </div>
         </div>
-        
 
         
 
 
-        <div class="line" v-show="AgentState != 2">
+        <div class="line">
         </div>
-        <div class="cell" v-show="AgentState != 2">
+        <div v-if="ARID>0 && YesOrNoModify==0"></div>
+        <div v-else>
+            <div class="cell" v-show="ARID==0" style="color:#bdbdbd">
+                <div class="cell-left">
+                    <img src="../assets/dl/icon5.png" alt="">
+                    <span>软件销售</span>
+                </div>
+                
+                <div class="iv-arrow"></div>
+            </div>
+            <div class="cell" v-show="ARID!=0">
+                <div class="cell-left">
+                    <img src="../assets/dl/icon5.png" alt="">
+                    <span>软件销售</span>
+                </div>
+                
+                <div class="iv-arrow"></div>
+            </div>
+        </div>
+        <!-- <div v-show="ARID==0" style="background:gray" class="cell" v-else>
             <div class="cell-left">
                 <img src="../assets/dl/icon5.png" alt="">
                 <span>软件销售</span>
             </div>
             
             <div class="iv-arrow"></div>
-        </div>
+        </div> -->
 
-        <div class="line1" v-show="AgentState != 5 && AgentState != 4 && AgentState != 2"></div>
-        <div class="cell" v-show="AgentState != 5 && AgentState != 4 && AgentState != 2">
+        <div v-if="YesOrNoRebate == 0 || (ARID>0 && YesOrNoModify==0)"></div>
+        <div v-else class="line1" v-if=""></div>
+        <div v-if="YesOrNoRebate == 0 || (ARID>0 && YesOrNoModify==0)"></div>
+        <div v-else class="cell" >
             <div class="cell-left">
                 <img src="../assets/dl/icon6.png" alt="">
                 <span>我的返点</span>
@@ -262,9 +251,9 @@
     -webkit-justify-content: center;
     justify-content: flex-start;
   }
-  .right{
-      position: absolute;
-      right: 30px;
+  .right {
+    position: absolute;
+    right: 30px;
   }
   img {
     width: 30px;
@@ -300,11 +289,13 @@ export default {
     return {
       nickname: localStorage.Username,
       paytype: localStorage.PayType,
-      AgentState: localStorage.AgentState,
-    //   AgentState: 3,
 
       myData: "",
-      czname: localStorage.czname
+      czname: localStorage.czname,
+      ARID: localStorage.ARID,
+      YesOrNoModify: localStorage.YesOrNoModify,
+      YesOrNoRebate: localStorage.YesOrNoRebate,
+      YesOrNoWindows: localStorage.YesOrNoWindows
     };
   },
   mounted() {
@@ -339,6 +330,11 @@ export default {
     chengweidailishang() {
       this.$router.push({
         path: "/wo/chengweidailishang"
+      });
+    },
+    zhanghuyuer() {
+      this.$router.push({
+        path: "/wo/zhanghuyuer"
       });
     }
   }

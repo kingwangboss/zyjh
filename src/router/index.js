@@ -100,10 +100,10 @@ export default new Router({
       component: resolve => require(['@/pages/wo/dailixiaoshou'], resolve),
     },
     {
-      path: '/wo/zaixianchongzhi',
-      name: 'zaixianchongzhi',
+      path: '/wo/zhanghuyuer',
+      name: 'zhanghuyuer',
       // component: error
-      component: resolve => require(['@/pages/wo/zaixianchongzhi'], resolve),
+      component: resolve => require(['@/pages/wo/zhanghuyuer'], resolve),
     },
     {
       path: '/wo/chengweidailishang',
@@ -116,6 +116,12 @@ export default new Router({
       name: 'woyaotixian',
       // component: error
       component: resolve => require(['@/pages/wo/woyaotixian'], resolve),
+    },
+    {
+      path: '/wo/mingxi',
+      name: 'mingxi',
+      // component: error
+      component: resolve => require(['@/pages/wo/mingxi'], resolve),
     },
     {
       path: '/error',

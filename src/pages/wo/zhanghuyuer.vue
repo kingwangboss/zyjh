@@ -1,12 +1,31 @@
 <template>
     <div>
         <m-header :title="title"></m-header>
+        <div class="userinfo">
+          <div class="top">
+            <div class="top-top">余额总数（元）</div>
+            <div class="top-bottom">{{PlanData.Fund}}</div>
+          </div>
+        </div>
         <div class="container">
+            <div class="title">充值金额</div>
+            <div class="middle">
+              <div class="input">
+                  <div v-if="disabled" class="icon1">￥</div>
+                  <div v-else class="icon">￥</div>
+                  <input class="item1" placeholder="0" type="number" @input="inputFuction" v-model="price">
+              </div>
+            </div>
+
             <div class="top">
                 <div class="top-item" v-for="(item,index) in PlanData.RechargeFreeList.split(',')" @click="priceClick(item)">{{item}}元</div>
             </div>
 
-            <div class="middle">
+            <div class="mark">
+              {{PlanData.Remark}}
+            </div>
+
+            <!-- <div class="middle">
                 <div class="input">
                     <div v-if="disabled" class="icon1">￥</div>
                     <div v-else class="icon">￥</div>
@@ -15,7 +34,7 @@
                 <div class="mark">
                     {{PlanData.Remark}}
                 </div>
-            </div>
+            </div> -->
 
             <el-button v-if="disabled" class="btnDefault" type="primary" @click="submit">立即充值</el-button>
             <el-button v-else class="btnEnable" type="primary">立即充值</el-button>
@@ -31,6 +50,39 @@
   font-weight: bold;
   height: 100%;
   line-height: 100%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../../assets/jianbian.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  .top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .top-top {
+      text-align: left;
+      color: white;
+      padding-left: 15px;
+      font-weight: bold;
+      font-size: 4vw;
+    }
+    .top-bottom {
+      text-align: left;
+      color: white;
+      padding: 20px 0 20px 15px;
+      font-size: 15vw;
+      font-weight: bold;
+    }
+  }
+}
+
+.title {
+  width: 100%;
+  text-align: left;
+  padding: 5px 0 5px 10px;
 }
 .container {
   position: fixed;
@@ -53,7 +105,7 @@
 
 .middle {
   background: white;
-  padding: 5px 0;
+  padding: 2px 0;
   .input {
     position: relative;
     margin: 10px;
@@ -89,11 +141,11 @@
     outline: none;
     color: rgb(255, 113, 5);
   }
-  .mark {
-    margin-left: 10px;
-    text-align: left;
-    color: rgb(255, 113, 5);
-  }
+}
+.mark {
+  margin-left: 10px;
+  text-align: left;
+  color: rgb(255, 113, 5);
 }
 
 .btnDefault {
@@ -124,8 +176,9 @@ export default {
   data() {
     return {
       title: {
-        text: "在线充值",
-        showBack: true
+        text: "账户余额",
+        showBack: true,
+        mingxi:true,
       },
       PlanData: "",
       disabled: false,

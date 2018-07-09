@@ -6,10 +6,12 @@
                 <div class="item1">
                     <img v-show="index==0" style="height:25px;" src="../../assets/wo/cjdls.png" alt="">
                     <img v-show="index==1" style="height:25px;" src="../../assets/wo/gjdls.png" alt="">
-                    <div style="margin-left:6px;">截止日期：{{RechargeFreeTime}}</div>
+                    <img v-show="index==2" style="height:25px;" src="../../assets/wo/bydls.png" alt="">
+                    <div v-if="item.RoleID == 1 || item.RoleID == 2" style="margin-left:6px;">截止日期：{{RechargeFreeTime}}</div>
                 </div>
                 <div class="item2">{{item.Remark}}</div>
-                <div class="item3" @click="submit(item.MinRecharge)">立即申请</div>
+                <div class="item3" v-if="item.RoleID == 1 || item.RoleID == 2" @click="submit(item.MinRecharge)">立即申请</div>
+                <div class="item3" v-else-if="item.RoleID == 3" @click="pushqq">联系客服</div>
             </div>
         </div>
     </div>
@@ -69,7 +71,8 @@ export default {
         showBack: true
       },
       arr: [],
-      RechargeFreeTime: ""
+      RechargeFreeTime: "",
+      QQUrl:'',
     };
   },
   components: {
@@ -96,6 +99,7 @@ export default {
         .then(res => {
           this.arr = res.data.Data.Data;
           this.RechargeFreeTime = res.data.Data.RechargeFreeTime;
+          this.QQUrl = res.data.Data.QQUrl;
         })
         .catch(error => {
           console.log(error);
@@ -126,6 +130,9 @@ export default {
         .catch(error => {
           console.log(error);
         });
+    },
+    pushqq(){
+      window.location.href = localStorage.QQUrl;
     }
   },
   mounted() {

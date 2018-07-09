@@ -114,7 +114,7 @@ export default {
       planflag: false,
       PlanData: "",
       lishiData: "",
-      AgentName:localStorage.AgentName,
+      AgentName: localStorage.AgentName,
     };
   },
   created() {
@@ -158,9 +158,12 @@ export default {
     } else if (localStorage.tab === "wo") {
       this.title = this.titleList[3];
       this.title.text = this.AgentName;
-      if(localStorage.AgentState != 4 && localStorage.AgentState != 5 && localStorage.AgentState != 0 && localStorage.AgentState !=3 && AgentState != 2){
+      this.title.wosetting = true;
+      if (
+        localStorage.ARID > 0 && localStorage.YesOrNoRebate == 1
+      ) {
         this.title.vip = true;
-      }else{
+      } else {
         this.title.vip = false;
       }
     } else {
@@ -182,7 +185,7 @@ export default {
     plan,
     shujufenxi,
     lishikaijiang,
-    wo,
+    wo
   },
   watch: {
     selected(val, oldVal) {
@@ -234,8 +237,20 @@ export default {
           break;
         case "wo":
           this.title = this.titleList[3];
-          this.title.text = this.AgentName;
+          this.title = {
+            text: this.AgentName,
+            showBack: false,
+            showQH: false,
+            wosetting: true
+          };
           localStorage.tab = "wo";
+          if (
+            localStorage.ARID > 0 && localStorage.YesOrNoRebate == 1
+          ) {
+            this.title.vip = true;
+          } else {
+            this.title.vip = false;
+          }
           break;
       }
     }

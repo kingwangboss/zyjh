@@ -29,6 +29,10 @@
                     <img src="../../assets/settings.png" alt="设置" />
                 </span>
 
+                <span v-if="title.wosetting" class="right" @click="wosetting">
+                    <img src="../../assets/settings.png" alt="设置" />
+                </span>
+
                 <span v-if="title.ok" class="right" @click="okClick">
                     <span>确定</span>
                 </span>
@@ -39,6 +43,10 @@
 
                 <span v-if="title.suoshuiright" class="right" @click="suoshuiright">
                     <span>确定</span>
+                </span>
+
+                <span v-if="title.mingxi" class="right" @click="mingxi">
+                    <span>明细</span>
                 </span>
                 
             </div>
@@ -98,7 +106,7 @@
       }
       .right {
         width: 12%;
-        margin-right: -40px;
+        margin-right: -13%;
         img {
           width: 20px;
           height: 20px;
@@ -215,7 +223,12 @@ export default {
     shousuo() {
       // this.$router.push()
     },
+    wosetting(){
 
+    },
+    mingxi(){
+      this.$router.push("/wo/mingxi");
+    },
     changeOkClick() {
       localStorage.sid = localStorage.sid1;
       localStorage.czname = localStorage.czname1;

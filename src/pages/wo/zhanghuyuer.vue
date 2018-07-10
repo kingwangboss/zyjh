@@ -256,8 +256,6 @@ export default {
   },
   watch: {
     price: function(now, old) {
-      console.log(now);
-      console.log(old);
       if (this.price.toString().length > 0) {
         this.disabled = true;
       } else {

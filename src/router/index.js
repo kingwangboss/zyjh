@@ -142,6 +142,12 @@ export default new Router({
       component: resolve => require(['@/pages/wo/XGpwd'], resolve),
     },
     {
+      path: '/wo/youhuijuan',
+      name: 'youhuijuan',
+      // component: error
+      component: resolve => require(['@/pages/wo/youhuijuan'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

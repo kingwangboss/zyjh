@@ -37,7 +37,7 @@
                 <div class="iv-arrow"></div>
             </div>
             <div class="line1"></div>
-            <div class="cell">
+            <div class="cell" @click="youhuijuan">
                 <div class="cell-left">
                     <img src="../assets/dl/icon3.png" alt="">
                     <span>优惠券</span>
@@ -337,8 +337,13 @@ export default {
         path: "/wo/zhanghuyuer"
       });
     },
-    kefu(){
-        window.location.href = localStorage.QQUrl;
+    kefu() {
+      window.location.href = localStorage.QQUrl;
+    },
+    youhuijuan() {
+      this.$router.push({
+        path: "/wo/youhuijuan"
+      });
     }
   }
 };

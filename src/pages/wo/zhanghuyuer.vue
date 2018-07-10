@@ -108,7 +108,7 @@
   padding: 2px 0;
   .input {
     position: relative;
-    margin: 10px;
+    margin: 10px 5%;
     border: 1px solid rgb(255, 113, 5);
     border-radius: 5px;
     height: 10vw;
@@ -138,6 +138,7 @@
   }
   .item1 {
     font-size: 30px;
+    width:70%;
     height: 100%;
     line-height: 100%;
     outline: none;

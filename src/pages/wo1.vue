@@ -107,7 +107,7 @@
 
         <div class="line">
         </div>
-        <div class="cell">
+        <div class="cell" @click="kefu">
             <div class="cell-left">
                 <img src="../assets/dl/icon7.png" alt="">
                 <span>在线客服</span>
@@ -336,6 +336,9 @@ export default {
       this.$router.push({
         path: "/wo/zhanghuyuer"
       });
+    },
+    kefu(){
+        window.location.href = localStorage.QQUrl;
     }
   }
 };

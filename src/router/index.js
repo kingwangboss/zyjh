@@ -124,6 +124,24 @@ export default new Router({
       component: resolve => require(['@/pages/wo/mingxi'], resolve),
     },
     {
+      path: '/wo/setting',
+      name: 'setting',
+      // component: error
+      component: resolve => require(['@/pages/wo/setting'], resolve),
+    },
+    {
+      path: '/wo/feedback',
+      name: 'feedback',
+      // component: error
+      component: resolve => require(['@/pages/wo/feedback'], resolve),
+    },
+    {
+      path: '/wo/XGpwd',
+      name: 'XGpwd',
+      // component: error
+      component: resolve => require(['@/pages/wo/XGpwd'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

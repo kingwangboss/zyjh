@@ -224,7 +224,7 @@ export default {
       // this.$router.push()
     },
     wosetting(){
-
+      this.$router.push("/wo/setting");
     },
     mingxi(){
       this.$router.push("/wo/mingxi");

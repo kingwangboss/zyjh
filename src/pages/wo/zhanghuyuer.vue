@@ -18,7 +18,7 @@
             </div>
 
             <div class="top">
-                <div class="top-item" v-for="(item,index) in PlanData.RechargeFreeList.split(',')" @click="priceClick(item)">{{item}}元</div>
+                <div class="top-item" v-for="(item,index) in (PlanData.RechargeFreeList || '').split(',')" @click="priceClick(item)">{{item}}元</div>
             </div>
 
             <div class="mark">
@@ -113,13 +113,15 @@
     border-radius: 5px;
     height: 10vw;
     line-height: 10vw;
+    text-align: left;
+    padding-left: 35px;
   }
   .icon {
     position: absolute;
     height: 10vw;
     line-height: 10vw;
-    left: 10px;
-    // top: 13px;
+    left: 5px;
+    top: 1px;
     font-size: 30px;
     color: #bdbdbd;
     font-weight: bold;
@@ -128,8 +130,8 @@
     position: absolute;
     height: 10vw;
     line-height: 10vw;
-    left: 10px;
-    // top: 13px;
+    left: 5px;
+    top: 1px;
     font-size: 30px;
     color: rgb(255, 113, 5);
     font-weight: bold;

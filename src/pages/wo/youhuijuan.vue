@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="youhuijuan" v-if="myData.AllowRewardNum > 0" v-for="(item,index) in myData.AllowRewardNum">
+        <div class="youhuijuan" v-show="myData.AllowRewardNum > 0" v-for="(item,index) in myData.AllowRewardNum">
             <img class="left" src="../../assets/wo/youhuijuan.png" alt="">
             <div class="right">
                 <div class="top">
@@ -25,7 +25,7 @@
                 <div style="color:rgb(255, 111, 4);font-size:15px;" class="bottom">有效期：{{myData.AllowRewardExpiration}}</div>
             </div>
         </div>
-        <div class="wu" v-else>
+        <div class="wu" v-show="myData.AllowRewardNum == 0">
             暂无优惠券
         </div>
     </div>

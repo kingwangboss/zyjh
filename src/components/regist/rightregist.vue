@@ -85,8 +85,8 @@
       background-color: transparent;
       margin-top: 3px;
       position: absolute;
-      left:40px;
-      top:8px;
+      left: 40px;
+      top: 8px;
       // margin-left: -20px;
       font-size: 16px;
       color: black;
@@ -283,6 +283,11 @@ export default {
 
               localStorage.user_name = this.user.name;
               localStorage.user_pwd = this.user.newpwd1;
+              localStorage.AgentName = res.data.Data.AgentName;
+              localStorage.ARID = res.data.Data.ARID;
+              localStorage.YesOrNoModify = res.data.Data.YesOrNoModify;
+              localStorage.YesOrNoRebate = res.data.Data.YesOrNoRebate;
+              localStorage.YesOrNoWindows = res.data.Data.YesOrNoWindows;
               that.$router.push({
                 path: "/"
               });

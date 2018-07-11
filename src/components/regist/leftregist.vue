@@ -285,6 +285,11 @@ export default {
 
             localStorage.user_name = this.mobile.num;
             localStorage.user_pwd = this.mobile.newpwd1;
+            localStorage.AgentName = res.data.Data.AgentName;
+            localStorage.ARID = res.data.Data.ARID;
+            localStorage.YesOrNoModify = res.data.Data.YesOrNoModify;
+            localStorage.YesOrNoRebate = res.data.Data.YesOrNoRebate;
+            localStorage.YesOrNoWindows = res.data.Data.YesOrNoWindows;
             this.$router.push({
               path: "/"
             });

@@ -48,6 +48,9 @@
                 <span v-if="title.mingxi" class="right" @click="mingxi">
                     <span>明细</span>
                 </span>
+                <span v-if="title.jilu" class="right" @click="jilu">
+                    <span>记录</span>
+                </span>
                 
             </div>
         </div>
@@ -228,6 +231,9 @@ export default {
     },
     mingxi(){
       this.$router.push("/wo/mingxi");
+    },
+    jilu(){
+
     },
     changeOkClick() {
       localStorage.sid = localStorage.sid1;

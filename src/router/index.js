@@ -148,6 +148,18 @@ export default new Router({
       component: resolve => require(['@/pages/wo/youhuijuan'], resolve),
     },
     {
+      path: '/wo/ruanjianxiaoshou',
+      name: 'ruanjianxiaoshou',
+      // component: error
+      component: resolve => require(['@/pages/wo/ruanjianxiaoshou'], resolve),
+    },
+    {
+      path: '/wo/fuwuxiangqing',
+      name: 'fuwuxiangqing',
+      // component: error
+      component: resolve => require(['@/pages/wo/fuwuxiangqing'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

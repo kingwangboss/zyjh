@@ -75,7 +75,7 @@
                 
                 <div class="iv-arrow"></div>
             </div>
-            <div class="cell" v-show="ARID!=0">
+            <div class="cell" v-show="ARID!=0" @click="ruanjianxiaoshou">
                 <div class="cell-left">
                     <img src="../assets/dl/icon5.png" alt="">
                     <span>软件销售</span>
@@ -343,6 +343,11 @@ export default {
     youhuijuan() {
       this.$router.push({
         path: "/wo/youhuijuan"
+      });
+    },
+    ruanjianxiaoshou() {
+      this.$router.push({
+        path: "/wo/ruanjianxiaoshou"
       });
     }
   }

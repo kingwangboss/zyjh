@@ -160,10 +160,23 @@ export default new Router({
       component: resolve => require(['@/pages/wo/fuwuxiangqing'], resolve),
     },
     {
+      path: '/wo/xiaoshoujilu',
+      name: 'xiaoshoujilu',
+      // component: error
+      component: resolve => require(['@/pages/wo/xiaoshoujilu'], resolve),
+    },
+    
+    {
       path: '/error',
       name: 'error',
       // component: error
       component: resolve => require(['@/pages/error'], resolve),
+    },
+    {
+      path: '/test',
+      name: 'test',
+      // component: error
+      component: resolve => require(['@/pages/test'], resolve),
     },
   ]
 })

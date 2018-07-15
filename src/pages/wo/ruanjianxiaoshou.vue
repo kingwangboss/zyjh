@@ -185,10 +185,11 @@ export default {
         jilu: true
       },
       user_name: "",
+      pid:'',
       disabled: false,
       disabled1: 0,
       myData: "",
-      ind:-1
+      ind:-1,
     };
   },
   components: {
@@ -233,10 +234,16 @@ export default {
     select(index){
         this.ind = index;
         this.disabled1 = 2;
-        console.log(this.ind);
+        this.pid = this.myData.PriceList[index].ID;
     },
     okclick() {
-        this.$router.push('/wo/fuwuxiangqing')
+        this.$router.push({
+          path:'/wo/fuwuxiangqing',
+          query:{
+            user_name:this.user_name,
+            pid:this.pid,
+          },
+        })
     }
   },
   watch: {

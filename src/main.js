@@ -12,6 +12,8 @@ import { Indicator } from 'mint-ui'
 import sha256 from "./util/sha256";
 import ElementUI from 'element-ui'
 import '../theme/index.css'
+import VueScroller from "vue-scroller";
+Vue.use(VueScroller);
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false

@@ -233,7 +233,7 @@ export default {
       this.$router.push("/wo/mingxi");
     },
     jilu(){
-
+      this.$router.push("/wo/xiaoshoujilu");
     },
     changeOkClick() {
       localStorage.sid = localStorage.sid1;
